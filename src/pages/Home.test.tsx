@@ -3,21 +3,21 @@ import { renderWithProviders } from '../test-utils';
 import Home from './Home';
 
 // Definimos el mock con name como STRING para que coincida con tu lógica de filtro
-const mockData = [{ 
-  name: 'Mexico', 
-  cca3: 'MEX', 
-  flag: 'flag.png', 
-  region: 'Americas', 
-  population: 126000000, 
-  capital: 'CDMX' 
-}];
+const mockData = {
+  name: 'Mexico',
+  cca3: 'MEX',
+  flag: 'https://flagcdn.com/mx.svg', // Propiedad correcta: flag (string)
+  region: 'Americas',
+  population: 126000000,
+  capital: 'CDMX' // Si tu interfaz dice que es string y no array, quita los corchetes
+};
 
 test('debe ejecutar las funciones de mapeo de lista', () => {
   renderWithProviders(<Home />, {
     preloadedState: {
       countries: {
-        list: mockData,
-        favorites: mockData, // Inyecta datos aquí también
+        list: [mockData],
+        favorites: [mockData], // Inyecta datos aquí también
         status: 'succeeded',
         searchTerm: '',
         error: null

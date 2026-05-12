@@ -1,28 +1,41 @@
-/* istanbul ignore file */
-import React from 'react';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import React, { PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
+import type { RenderOptions } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import { MemoryRouter } from 'react-router-dom'; // Cambiado para mayor compatibilidad
-import countryReducer from './store/slices/countrySlices';
+import { BrowserRouter } from 'react-router-dom'; // IMPORTANTE
+import countryReducer from './store/slices/countrySlices'; 
+
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+  preloadedState?: any;
+  store?: any;
+}
+
+const rootReducer = combineReducers({
+  countries: countryReducer,
+});
 
 export function renderWithProviders(
   ui: React.ReactElement,
   {
     preloadedState = {},
     store = configureStore({ 
-      reducer: { countries: countryReducer }, 
+      reducer: rootReducer, 
       preloadedState 
     }),
     ...renderOptions
-  } = {}
+  }: ExtendedRenderOptions = {}
 ) {
-  function Wrapper({ children }: { children: React.ReactNode }) {
+  function Wrapper({ children }: PropsWithChildren<{}>): React.ReactElement {
+    // Envolvemos con el Router para solucionar el error de 'future' de useContext
     return (
       <Provider store={store}>
-        <MemoryRouter>{children}</MemoryRouter>
+        <BrowserRouter>
+          {children}
+        </BrowserRouter>
       </Provider>
     );
   }
+
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }

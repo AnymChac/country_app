@@ -12,10 +12,10 @@ jest.mock('react-router-dom', () => ({
 const mockCountry = {
   name: 'Mexico',
   cca3: 'MEX',
-  flag: 'flag.svg',
+  flag: 'https://flagcdn.com/mx.svg', // CAMBIADO: 'flag' en lugar de 'flags'
   region: 'Americas',
   population: 126000000,
-  capital: 'CDMX'
+  capital: 'CDMX' // CAMBIADO: 'CDMX' en lugar de ['CDMX']
 };
 
 test('debe cubrir las funciones de detalles, favoritos y navegación', () => {

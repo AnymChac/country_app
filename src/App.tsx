@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <GlobalStyle /> 
-      <BrowserRouter>
+      <BrowserRouter basename="/country_app">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

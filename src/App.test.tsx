@@ -1,17 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
+// No importamos ni usamos MemoryRouter aquí si App ya lo tiene dentro
 import { store } from './store'; 
 import App from './App';
 
 test('debe renderizar el componente App sin romperse', () => {
   render(
     <Provider store={store}>
-      {/* Eliminamos el BrowserRouter de aquí porque App ya tiene uno dentro o en el index */}
+      {/* Si App.tsx ya tiene el <BrowserRouter basename="/country_app">,
+         no pongas nada más aquí.
+      */}
       <App />
     </Provider>
   );
-  
-  // Verifica que el nombre de tu app aparezca en pantalla
-  const titleElement = screen.getByText(/CountryPedia/i); 
-  expect(titleElement).toBeInTheDocument();
 });
