@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Agrega BrowserRouter aquí
+import { GlobalStyle } from './styles/main.styles'; // El archivo de estilos globales
+import  Navbar  from './components/Navbar';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import CountryDetails from './pages/CountryDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle /> 
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/country/:id" element={<CountryDetails />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
