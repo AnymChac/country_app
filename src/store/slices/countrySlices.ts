@@ -4,10 +4,10 @@ import axios from 'axios';
 export interface Country {
   name: string;
   cca3: string;
-  flag: string;
-  capital: string;
+  flag: string;     
   region: string;
   population: number;
+  capital: string;   
 }
 
 interface CountryState {

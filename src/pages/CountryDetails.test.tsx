@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 const mockCountry = {
   name: 'Mexico',
   cca3: 'MEX',
-  flag: 'mex.svg',
+  flag: 'flag.svg',
   region: 'Americas',
   population: 126000000,
   capital: 'CDMX'
