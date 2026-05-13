@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# 🌍 Country-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://github.com/AnymChac/country_app)
+[![API](https://img.shields.io/badge/Data-REST_Countries-blue?style=for-the-badge)](https://restcountries.com/)
+[![JS](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)](https://github.com/AnymChac/country_app)
 
-## Available Scripts
+## 📝 Descripción
+Esta es una aplicación interactiva desarrollada con **React** que funciona como una enciclopedia global de naciones. El proyecto consume datos dinámicos de la **REST Countries API** para presentar información detallada sobre población, geografía y cultura en una interfaz moderna y responsiva.
 
-In the project directory, you can run:
+El enfoque principal fue crear una experiencia de usuario fluida mediante el manejo eficiente de estados y navegación dinámica entre componentes.
 
-### `npm start`
+## 🛠️ Tecnologías Utilizadas
+- **React.js**: Biblioteca principal para la arquitectura de la interfaz.
+- **Axios**: Cliente HTTP para realizar peticiones asíncronas a la API de forma eficiente.
+- **Styled Components**: Para el manejo de estilos modulares y diseño dinámico.
+- **React Router**: Gestión de rutas para la navegación entre la lista general y las vistas detalladas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Instalación y Configuración
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clonar el proyecto:**
+   ```bash
+   git clone [https://github.com/AnymChac/country_app.git](https://github.com/AnymChac/country_app.git)
+2. **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
+3. **Lanzar la aplicación:**
+    ```bash
+    npm start
+    ```
+## 📖 Ejemplos de Uso
+**Búsqueda**
+El usuario puede filtrar la lista de países con la búsqueda por nombre: 
+- Filtra los resultados en tiempo real mientras se escribe en el campo de búsqueda.
 
-### `npm test`
+**Navegación a Detalles**
+Al hacer clic en cualquier tarjeta de país, la aplicación utiliza parámetros de ruta para cargar una vista extendida. En esta sección se puede visualizar:
+- Información Demográfica: Capital, población total y subregión.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Conectemos
+- [LinkedIn](https://www.linkedin.com/in/carlos-ariel-espinosa-arroyo-999753260)
+- [Email](carlos.espinosaarroyo@gmail.com)
